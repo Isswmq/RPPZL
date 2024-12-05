@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+        <VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" spacing="10" alignment="CENTER" fx:controller="com.prodmaster.controller.MainController">
+            <Label fx:id="label" text="Система управления производством" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Button fx:id="goToProductButton" text="Управление продуктами" onAction="#goToProduct"/>
+            <Button text="Управление компонентами" onAction="#goToComponent"/>
+            <Button text="Управление спецификациями" onAction="#goToSpecification"/>
+            <Button text="Управление рабочими центрами" onAction="#goToWorkCenter"/>
+            <Button text="Управление операциями" onAction="#goToOperation"/>
+            <Button text="Управление технологическими маршрутами" onAction="#goToTechnologyRoute"/>
+        </VBox>

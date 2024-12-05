@@ -1,0 +1,41 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    id 'java'
+}
+
+group 'com.prodmaster'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // PostgreSQL драйвер
+    implementation "org.postgresql:postgresql:42.7.4"
+
+    // Hibernate
+    implementation "org.hibernate.orm:hibernate-core:6.6.1.Final"
+
+    // JPA API
+    implementation 'javax.persistence:javax.persistence-api:2.2'
+
+    // JavaFX
+    implementation 'org.openjfx:javafx-base:21.0.5'
+    implementation 'org.openjfx:javafx-controls:21.0.5'
+    implementation 'org.openjfx:javafx-fxml:21.0.5'
+
+    // Lombok для генерации геттеров/сеттеров
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+}
+
+javafx {
+    version = "17.0.2"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+application {
+    mainClass = 'com.prodmaster.MainApp'
+}
