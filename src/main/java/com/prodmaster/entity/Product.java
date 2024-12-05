@@ -5,6 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnDefault;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @Entity
@@ -18,12 +22,20 @@ public class Product {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "description", length = Integer.MAX_VALUE)
+    @Column(name = "description", length = 255)
     private String description;
 
-    public Product(String name, String description) {
+    @Column(name = "price", nullable = false)
+    private BigDecimal price;
+
+    @Column(name = "created_date")
+    private LocalDateTime createdDate;
+
+    public Product(String name, String description, BigDecimal price) {
         this.name = name;
         this.description = description;
+        this.price = price;
+        this.createdDate = LocalDateTime.now();
     }
 
     public Product() {

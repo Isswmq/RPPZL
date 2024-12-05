@@ -4,23 +4,35 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
-
 <?import javafx.scene.control.TextArea?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TableColumn?>
+
 <VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prodmaster.controller.ProductController" spacing="10" alignment="CENTER">
     <TextField fx:id="nameField" promptText="Product Name"/>
+    <TextField fx:id="priceField" promptText="Product Price"/>
     <TextArea fx:id="descriptionField" promptText="Product Description"/>
+
     <Button text="Save Product" onAction="#saveProduct"/>
+
+    <Button fx:id="sortButton" text="Sort by Price" onAction="#sortProductsByPrice"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="searchIdField" promptText="Enter Product ID to Search or Delete" />
+        <Button text="Search by ID" onAction="#searchProductById"/>
+        <Button text="Delete Product" onAction="#deleteProduct"/>
+    </HBox>
+    <Button text="Update Product" onAction="#updateProduct"/>
     <TableView fx:id="productTable">
         <columns>
             <TableColumn fx:id="idColumn" text="ID" />
             <TableColumn fx:id="nameColumn" text="Name" />
             <TableColumn fx:id="descriptionColumn" text="Description" />
+            <TableColumn fx:id="priceColumn" text="Price" />
+            <TableColumn fx:id="createdDateColumn" text="Created Date" />
         </columns>
     </TableView>
     <Button text="Back to Main Screen" onAction="#goToMainScreen"/>
 </VBox>
-
