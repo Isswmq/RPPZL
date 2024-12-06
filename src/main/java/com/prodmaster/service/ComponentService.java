@@ -15,4 +15,17 @@ public class ComponentService {
     public List<Component> getAllComponents() {
         return componentDAO.getAll();
     }
+
+    public void deleteComponent(Integer id) {
+        componentDAO.deleteComponent(id);
+    }
+
+    public Component findComponentById(Integer id) {
+        return componentDAO.findComponentById(id);
+    }
+
+    public Component updateComponent(Integer id, String newName, int newQuantity) {
+        return componentDAO.updateComponent(id, newName, newQuantity);
+    }
+
 }

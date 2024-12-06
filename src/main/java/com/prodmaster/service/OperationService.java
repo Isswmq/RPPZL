@@ -1,6 +1,7 @@
 package com.prodmaster.service;
 
 import com.prodmaster.dao.OperationDAO;
+import com.prodmaster.entity.Component;
 import com.prodmaster.entity.Operation;
 
 import java.util.List;
@@ -17,4 +18,15 @@ public class OperationService {
         return operationDAO.getAll();
     }
 
+    public void deleteOperation(Integer id) {
+        operationDAO.delete(id);
+    }
+
+    public Operation findOperationById(Integer id) {
+        return operationDAO.findById(id);
+    }
+
+    public Operation updateOperation(Integer id, String newName, Integer newDuration) {
+        return operationDAO.update(id, newName, newDuration);
+    }
 }

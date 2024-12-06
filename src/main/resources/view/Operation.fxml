@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prodmaster.controller.OperationController" spacing="10" alignment="CENTER">
+    <TextField fx:id="nameField" promptText="Operation Name"/>
+    <TextField fx:id="durationField" promptText="Operation Duration"/>
 
-<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.prodmaster.controller.OperationController">
+    <Button text="Save Operation" onAction="#saveOperation"/>
 
-    <TextField fx:id="nameField" promptText="Operation Name" />
-    <TextField fx:id="durationField" promptText="Operation Duration" />
-    <Button onAction="#saveOperation" text="Save Operation" />
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="searchIdField" promptText="Enter Operation ID to Search or Delete" />
+        <Button text="Search by ID" onAction="#searchOperationById"/>
+        <Button text="Delete Operation" onAction="#deleteOperation"/>
+    </HBox>
+
+    <Button text="Update Operation" onAction="#updateOperation"/>
 
     <TableView fx:id="operationTable">
         <columns>
+            <TableColumn fx:id="idColumn" text="ID" />
             <TableColumn fx:id="nameColumn" text="Name" />
             <TableColumn fx:id="durationColumn" text="Duration" />
-            <TableColumn fx:id="idColumn" text="ID" />
         </columns>
     </TableView>
 
-    <Button onAction="#goToMainScreen" text="Back to Main Screen" />
+    <Button text="Back to Main Screen" onAction="#goToMainScreen"/>
 </VBox>

@@ -14,8 +14,5 @@
         <mapping class="com.prodmaster.entity.Component"/>
         <mapping class="com.prodmaster.entity.Operation"/>
         <mapping class="com.prodmaster.entity.Specification"/>
-
-        <!-- DB schema will be updated if needed -->
-
     </session-factory>
 </hibernate-configuration>

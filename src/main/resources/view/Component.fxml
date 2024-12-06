@@ -10,6 +10,13 @@
     <TextField fx:id="nameField" promptText="Component Name"/>
     <TextField fx:id="quantityField" promptText="Quantity"/>
     <Button text="Save Component" onAction="#saveComponent"/>
+    <Button text="Update Component" onAction="#updateComponent"/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <TextField fx:id="searchIdField" promptText="Enter Component ID to Search or Delete" />
+        <Button text="Search by ID" onAction="#searchComponentById"/>
+        <Button text="Delete Component by ID" onAction="#deleteComponent"/>
+    </HBox>
 
     <TableView fx:id="componentTable">
         <columns>
